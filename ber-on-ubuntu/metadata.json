@@ -1,0 +1,7 @@
+{
+  "itemDisplayName": "BER on Ubuntu",
+  "description": "This template deploys a BER node on an Ubuntu VM.",
+  "summary": "Deploys BER.",
+  "githubUsername": "bloq-dev",
+  "dateUpdated": "2016-06-01"
+}
