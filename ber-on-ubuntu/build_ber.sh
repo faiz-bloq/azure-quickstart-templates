@@ -3,8 +3,7 @@
 clear
 echo "This script will setup a BER."
 echo "---"
-echo "To use this script you have to be using Ubuntu 14.04. It MAY work on other versions,"
-echo "but let's not push our luck."
+echo "To use this script you have to be using Ubuntu 14.04. It MAY work on other versions."
 echo "---"
 echo "Performing a general system update (this might take a while)..."		
 sudo apt-get update > /dev/null 2>&1
@@ -12,7 +11,7 @@ sudo apt-get -y upgrade > /dev/null 2>&1
 sudo apt-get -y dist-upgrade > /dev/null 2>&1
 echo "---"
 echo "Installing prerequisites..."
-sudo apt-get -y install nano htop unzip apt-utils ntp ca-certificates screen dialog ufw lbzip2 curl wget cron > /dev/null 2>&1
+sudo apt-get -y install git apache2 apt-cacher-ng python-vm-builder ruby qemu-utils > /dev/null 2>&1
 echo "---"
 echo "Enabling Ubuntu's unattended security upgrades..."
 sudo apt-get -y install unattended-upgrades > /dev/null 2>&1
@@ -24,7 +23,7 @@ sudo ufw allow 22/tcp > /dev/null 2>&1
 sudo ufw allow 18080/tcp > /dev/null 2>&1
 sudo ufw --force enable > /dev/null 2>&1
 echo "---"
-echo "Installing and configuring Monero..."
+echo "Installing and configuring BER..."
 cd /tmp
 wget -q https://downloads.getmonero.org/linux > /dev/null 2>&1
 tar -xf /tmp/linux > /dev/null 2>&1
