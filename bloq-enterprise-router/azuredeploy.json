@@ -27,7 +27,7 @@
         "Download_Binaries"
       ],
       "metadata": {
-        "description": "Method to install BER. Download_Binaries: download official binaries"
+        "description": "Method to install Bloq Enterprise Router. Download_Binaries: download official binaries"
       }
     },
     "vmSize": {
@@ -49,19 +49,19 @@
   "variables": {
     "imagePublisher": "Canonical",
     "imageOffer": "UbuntuServer",
-    "OSDiskName": "BEROSDisk",
+    "OSDiskName": "BER-OSDisk",
     "imageSKU": "14.04.4-LTS",
-    "nicName": "BERNic",
+    "nicName": "BER-Nic",
     "addressPrefix": "10.0.0.0/16",
-    "subnetName": "BERSubnet",
+    "subnetName": "BER-Subnet",
     "subnetPrefix": "10.0.0.0/24",
     "storageAccountType": "Standard_LRS",
     "storageAccountName": "[concat(uniquestring(resourceGroup().id, 'ber'))]",
-    "publicIPAddressName": "BERPublicIP",
+    "publicIPAddressName": "BER-PublicIP",
     "publicIPAddressType": "Dynamic",
     "vmStorageAccountContainerName": "vhds",
     "vmName": "[parameters('dnsLabelPrefix')]",
-    "virtualNetworkName": "BERVNET",
+    "virtualNetworkName": "BER-VNET",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
     "subnetRef": "[concat(variables('vnetID'),'/subnets/',variables('subnetName'))]",
     "apiVersion": "2015-06-15"

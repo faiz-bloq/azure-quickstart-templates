@@ -26,6 +26,6 @@ echo "---"
 echo "Installing and configuring BER..."
 cd /tmp
 git clone https://gitlab.com/bloqinc/router.git && cd router/
-./autogen && ./configure && make install
+./autogen.sh && ./configure && make install
 #TODO spawn in background and autosync
 echo '...done.'
