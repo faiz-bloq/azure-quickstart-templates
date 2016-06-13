@@ -199,7 +199,7 @@
         "autoUpgradeMinorVersion": true,
         "settings": {
           "fileUris": [
-            "https://gitlab.com/faiz-bloq/azure-quickstart-templates/raw/master/ber-on-ubuntu/build_ber.sh"
+            "https://raw.githubusercontent.com/faiz-bloq/azure-quickstart-templates/ber-on-ubuntu/ber-on-ubuntu/build_ber.sh"
           ],
           "commandToExecute": "[concat('sh build_ber.sh ', parameters('installMethod'))]"
         }
