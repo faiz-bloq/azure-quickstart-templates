@@ -9,6 +9,7 @@ echo "Adding Bloq Enterprise Repo...\n"
 sudo apt-add-repository 'deb https://pkg.bloqenterprise/ stable main'
 
 echo "Receiving GPG keys...\n"
+sudo gpg #init trustdb
 sudo gpg --recv-key 91955EB3D6410A98 
 sudo gpg -a --export 91955EB3D6410A98 | sudo apt-key add -
 
