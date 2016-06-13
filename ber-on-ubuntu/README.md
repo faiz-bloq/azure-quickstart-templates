@@ -10,11 +10,7 @@ software the daemon will begin a sync with the network, which could take up to 2
 
 ## Monitoring
 
-This deployment has a upstart script for enhanced monitoring.
-
-## Security
-
-This script enables boot scripts and firewall rules.
+This deployment has a upstart script that starts a BER node and begins syncing.
 
 ## Trouble?
 
