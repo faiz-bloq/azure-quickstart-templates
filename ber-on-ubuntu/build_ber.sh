@@ -19,23 +19,22 @@ sudo apt-get update > /dev/null 2>&1
 echo "Installing and configuring BER...\n"
 sudo apt-get -y install router-bloq > /dev/null 2>&1
 
-PASSWORD="$(od -vAn -N8 -tx < /dev/urandom)"
+PASSWORD="$(od -vAn -N8 -tx < /dev/urandom | tr -d ' ')"
 sudo mkdir /root/.bitcoin
 echo "Configuring BER ...\n"
 cat << EOF > /root/.bitcoin/bitcoin.conf
-    daemon=1
-    server=1
-    rpcuser=rpcuser
-    rpcpassword=$PASSWORD
+daemon=1
+server=1
+rpcuser=rpcuser
+rpcpassword=$PASSWORD
 EOF
 
 echo "Configuring upstart ...\n"
 cat << EOF > /etc/init/ber.conf
     description "BER Node Service"
 
-    start on starting
     script
-      /usr/local/bin/bitcoind
+      /usr/local/bin/bitcoind -printtoconsole
     end script
 EOF
 chmod +x /etc/init/ber.conf
